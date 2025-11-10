@@ -39,6 +39,23 @@ header {
   fill: var(--evri-text-white);
 }
 
+.user-info {
+  flex: 1;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.user-info span {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--evri-text-white);
+  text-transform: capitalize;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
 nav {
   display: flex;
   gap: 30px;
@@ -388,6 +405,22 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .user-info {
+    order: 3;
+    flex-basis: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .user-info span {
+    font-size: 1em;
+    padding: 6px 15px;
+  }
+
   .hero h1 {
     font-size: 2.5em;
   }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Evri - Login</title>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <svg width="150" height="50" viewBox="0 0 150 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="20" y="35" font-family="Inter, sans-serif" font-size="40" font-weight="800" fill="#FFFFFF">evri</text>
+        </svg>
+      </div>
+      
+      <h1>Welcome Back</h1>
+      <p class="subtitle">Please login to continue</p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Handle login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      // Validate inputs
+      if (username === '' || password === '') {
+        alert('Please enter both username and password');
+        return;
+      }
+      
+      // Store username in sessionStorage
+      sessionStorage.setItem('username', username);
+      sessionStorage.setItem('isLoggedIn', 'true');
+      
+      // Redirect to main page
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+
+</html>
