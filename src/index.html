@@ -5,13 +5,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Evri - A great value parcel delivery & courier service</title>
 </head>
 
 <body>
+  <header>
+    <div class="logo">
+      <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="28" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">evri</text>
+      </svg>
+    </div>
+    <nav>
+      <a href="#send">Send</a>
+      <a href="#track">Track</a>
+      <a href="#return">Return</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Vanilla JavaScript App</h1>
+    <section class="hero">
+      <h1>We're here to support you</h1>
+      <p class="subtitle">Send, track and return parcels quickly and easily - all in one place</p>
+      <div class="form-container">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="airwayBill">Master Airway Bill No</label>
+            <input type="text" id="airwayBill" name="airwayBill" placeholder="Enter Master Airway Bill No">
+          </div>
+          <div class="form-group">
+            <label for="trailerId">Trailer ID</label>
+            <input type="text" id="trailerId" name="trailerId" placeholder="Enter Trailer ID">
+          </div>
+          <button class="btn-submit">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>Complete flexibility</h3>
+        <p>Send or return your parcels with our network of 10,000+ ParcelShops and Lockers across the UK</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <h3>A premium service</h3>
+        <p>Get full tracking and cover for up to £20, free of charge with every parcel</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💷</div>
+        <h3>Cheap courier service</h3>
+        <p>Send or return a parcel using our handy Courier service, for a low price</p>
+      </div>
+    </section>
+
+    <section class="price-highlight">
+      <h2>Your cheapest way to send parcels</h2>
+      <p>Prices from <span class="price">£2.70</span> for Postable parcels</p>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Evri. All rights reserved.</p>
+  </footer>
 </body>
 
 </html>
