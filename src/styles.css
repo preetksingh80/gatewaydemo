@@ -211,6 +211,109 @@ main {
   margin-bottom: 60px;
 }
 
+/* Data Table Section */
+.data-table-section {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.data-table-section h2 {
+  color: #2C2C2C;
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Scrollbar */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--royal-blue);
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-blue-dark);
+}
+
+#submissionTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+#submissionTable thead {
+  background-color: var(--royal-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#submissionTable th {
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1em;
+  border-bottom: 3px solid var(--royal-blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#submissionTable tbody tr {
+  border-bottom: 1px solid #E0E0E0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#submissionTable tbody tr:hover {
+  background-color: #F8F9FF;
+  transform: scale(1.01);
+}
+
+#submissionTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+#submissionTable td {
+  padding: 18px 20px;
+  color: #2C2C2C;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #28A745 0%, #20C997 100%);
+  color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
 .feature-card {
   background: var(--evri-card-bg);
   padding: 40px 30px;
@@ -304,6 +407,32 @@ footer {
 
   .btn-submit {
     width: 100%;
+  }
+
+  .table-wrapper {
+    max-height: 300px;
+  }
+
+  #submissionTable {
+    font-size: 0.9em;
+  }
+
+  #submissionTable th,
+  #submissionTable td {
+    padding: 12px 10px;
+  }
+
+  .status-badge {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+
+  .data-table-section {
+    padding: 20px 10px;
+  }
+
+  .data-table-section h2 {
+    font-size: 1.5em;
   }
 
   .features {

@@ -44,6 +44,24 @@
       </div>
     </section>
 
+    <section class="data-table-section" id="dataTableSection" style="display: none;">
+      <h2>Submission Records</h2>
+      <div class="table-wrapper">
+        <table id="submissionTable">
+          <thead>
+            <tr>
+              <th>MAWB ID</th>
+              <th>Trailer ID</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rows will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="features">
       <div class="feature-card">
         <div class="feature-icon">📦</div>
@@ -71,6 +89,66 @@
   <footer>
     <p>&copy; 2025 Evri. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Get form elements
+    const submitBtn = document.querySelector('.btn-submit');
+    const airwayBillInput = document.getElementById('airwayBill');
+    const trailerIdInput = document.getElementById('trailerId');
+    const tableSection = document.getElementById('dataTableSection');
+    const tableBody = document.getElementById('tableBody');
+
+    // Add click event listener to submit button
+    submitBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get input values
+      const mawbId = airwayBillInput.value.trim();
+      const trailerId = trailerIdInput.value.trim();
+      
+      // Validate inputs
+      if (mawbId === '' || trailerId === '') {
+        alert('Please fill in both fields');
+        return;
+      }
+      
+      // Show table section if hidden
+      if (tableSection.style.display === 'none') {
+        tableSection.style.display = 'block';
+      }
+      
+      // Create new row
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${mawbId}</td>
+        <td>${trailerId}</td>
+        <td><span class="status-badge">Submitted</span></td>
+      `;
+      
+      // Add row to table
+      tableBody.appendChild(newRow);
+      
+      // Clear input fields
+      airwayBillInput.value = '';
+      trailerIdInput.value = '';
+      
+      // Focus back on first input
+      airwayBillInput.focus();
+    });
+
+    // Allow Enter key to submit
+    airwayBillInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        submitBtn.click();
+      }
+    });
+
+    trailerIdInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        submitBtn.click();
+      }
+    });
+  </script>
 </body>
 
 </html>
